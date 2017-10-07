@@ -20,22 +20,22 @@ POST /conversations
 PUT /conversations/{id}
 DELETE /converations/{id}
 ```
-##Questions
+## Questions
 1. Why the type of `store` is `Store` and not `Memstore`?
 2. What dessign patterns is used on the first iteration?
 
-#Second iteration
+# Second iteration
 An `Injector` that used injectable components defined in configuration JSON file to manage components. The JSON file have a DB connection components to be implemented.
 
-##Questions
+## Questions
 1. What is the advantage of having initialization in configuration file?
 2. What is the pattern with an `Injector` called?
 3. What is needed in order to swap the implementation to a `DBStore` components?
 4. What steps should be done to have a definable environment variable in configuration file?
 
-#Third iteration
+# Third iteration
 A generic repository to handle all kind data repository definable in configuration JSON file.
 
-##Questions
+## Questions
 1. What is the benefit of the changes?
 2. What should be changed to add a new data repository? i.e. path `/tokens` with the fields: `string token; int expire`
