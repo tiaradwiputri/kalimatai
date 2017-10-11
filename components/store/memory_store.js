@@ -1,0 +1,1 @@
+module.exports = Memstore = require('memstore').Store;
