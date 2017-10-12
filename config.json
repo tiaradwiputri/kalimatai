@@ -5,19 +5,39 @@
             "dependencies": []
         },
         "convRepo": {
-            "file": "components/repo/conversation_repo.js",
-            "dependencies": ["store"]
+            "file": "components/repo/generic_repo.js",
+            "dependencies": ["store"],
+            "options": {
+                "schema": {
+                    "userId": "int",
+                    "direction": "string",
+                    "message": "string",
+                    "timestamp": "int"
+                }
+            }
         },
         "userRepo": {
-            "file": "components/repo/user_repo.js",
-            "dependencies": ["store"]
+            "file": "components/repo/generic_repo.js",
+            "dependencies": ["store"],
+            "options": {
+                "schema": {
+                    "name": "string",
+                    "gender": "string",
+                    "city": "string",
+                    "phone": "string",
+                    "email": "string"
+                }
+            }
         },
         "server": {
             "file": "components/server/api_server.js",
-            "dependencies": ["convRepo", "userRepo"]
+            "dependencies": ["convRepo",  "userRepo"],
+            "options": {
+                "routes": ["/conversations", "/users"]
+            }
         }
     },
-        
+    
     "main": {
         "component": "server",
         "method": "start",

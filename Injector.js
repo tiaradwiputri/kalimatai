@@ -1,27 +1,33 @@
 method = Injector.prototype
 
 function Injector(config){
-	var component = config['components']['store'];
-	this._store = this._resolve(component);
-	component = config['components']['convRepo'];
-	this._convRepo = this._resolve(component);
-	component = config['components']['userRepo'];
-	this._userRepo = this._resolve(component);
-	component = config['components']['server'];
-	this._server = this._resolve(component);
-	this._main = config['main'];
+	for (key in config['components']){		
+		var component = config['components'][key];
+		eval('this._'+key+'= this._resolve(component);')
+		this._main = config['main'];
+		if(key!='store' && key!='server'){
+			eval('this._'+key+'.setName("'+key+'");');
+		}
+	}
 }
 
 method._resolve = function(component){
+	//this one might be able to be assigned directly 
 	args = [];
 	i=0;
 	while(i<component['dependencies'].length){
 		args.push('this._'+component['dependencies'][i]);
 		i++;
 	}
-	//resolve would be creating the component object from the string config file
-	var comp = require('./'+component['file']);
-	eval('var object = new comp('+args.toString()+');');
+	if(component['options']){
+		options = component['options'];
+		var comp = require('./'+component['file']);
+		eval('var object = new comp('+args.toString()+',options);');
+	} else {
+		var comp = require('./'+component['file']);
+		eval('var object = new comp('+args.toString()+');');
+	}
+	
 	return object
 }
 

@@ -6,14 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mongodb": "^2.2.31",
+    "mongoose": "* "
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiaradwiputri/tiarakataai.git"
+    "url": "git+https://github.com/tiaradwiputri/kalimatai.git"
   },
   "author": "Tiara Dwiputri",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tiaradwiputri/tiarakataai/issues"
+    "url": "https://github.com/tiaradwiputri/kalimatai/issues"
   },
-  "homepage": "https://github.com/tiaradwiputri/tiarakataai#readme"
+  "homepage": "https://github.com/tiaradwiputri/kalimatai#readme"
 }
