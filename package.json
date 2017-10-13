@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha || true"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,10 @@
   },
   "author": "Tiara Dwiputri",
   "license": "ISC",
+  "devDependencies":{
+    "chai":"*",
+    "mocha":"*"
+  },
   "bugs": {
     "url": "https://github.com/tiaradwiputri/tiarakataai/issues"
   },

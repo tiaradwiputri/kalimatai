@@ -14,10 +14,6 @@ function ConversationRepo(store){
 	}
 	this._log = this._store.get('log');
 	this._repo = [];
-	this._repo.push({
-		id:2,
-		direction: "outgoing"
-	})
 	var schema = {
 		"type": "object",
 	    "properties": {
