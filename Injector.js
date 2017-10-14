@@ -2,8 +2,10 @@ method = Injector.prototype
 
 function Injector(config){
 	for (key in config['components']){		
+		
 		var component = config['components'][key];
 		eval('this._'+key+'= this._resolve(component);')
+		
 		this._main = config['main'];
 		if(key!='store' && key!='server'){
 			eval('this._'+key+'.setName("'+key+'");');
