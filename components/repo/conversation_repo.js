@@ -11,6 +11,7 @@ function ConversationRepo(store){
 		this._log = JSON.stringify(this._log).slice(0,-1);
 		this._log += ',"Conversation":[]}';
 		this._log = JSON.parse(this._log);
+		this._store.set('log',this._log);
 	}
 	this._log = this._store.get('log');
 	this._repo = [];
@@ -107,7 +108,8 @@ method.update = function(id, partialData){
 			if(partialData.timestamp){
 				this._repo[i].timestamp = partialData.timestamp;
 			}
-			this._store.set('log', this._repo);
+			this._log['Conversation'] = this._repo;
+			this._store.set('log', this._log);
 			return {
 				Conversation:this._repo[i]
 			}
@@ -124,7 +126,8 @@ method.remove = function(id){
 		if(this._repo[i].id == id){
 			removed = this._repo[i];
 			this._repo.splice(i,1);
-			this._store.set('log',this._repo);
+			this._log['Conversation'] = this._repo;
+			this._store.set('log', this._log);
 			return {
 				Conversation: removed
 			}
