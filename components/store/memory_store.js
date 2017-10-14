@@ -39,22 +39,19 @@ method.findById = function(id,name){
 	}
 	return {
 		message: "record not found",
-		error: "true"
+		error: true
 	}
 }
 
 method.find = function(page,limit,name){
 	var log = this._store.get('log');
 	var repo = log[name];
-	console.log('inside find method');
-	console.log(repo.length)
 	var rec = [];
 	for(i=0;i<10;i++){
 		if(i+((page-1)*10) > limit-1 || i>(repo.length-(10*(page-1))-1)){
 			break;
 		}
-		rec.push(repo[i+((page-1)*10)])
-		console.log(i);
+		rec.push(repo[i+((page-1)*10)]);
 	}
 	log = {};
 	log[name] = rec;
