@@ -1,6 +1,8 @@
 # Dependency Injection
 
-This is a take home assignment to create a warehousing system that enables one service to handle all data management. The system will be developed in iterations.
+This is a take home assignment to create a warehousing system that enables one service to handle all data management. The system will be developed in iterations. Each branch represent an iteration with third iteration as master branch.
+
+To start the application please use command `node index.js` or `nodemon`. To start test please use command `npm run test`.
 
 # First iteration
 CRUD operations for conversation log and user profile. The data shall be stored in memory using Memstore module.
@@ -25,7 +27,7 @@ DELETE /converations/{id}
 2. What dessign patterns is used on the first iteration?
 
 # Second iteration
-An `Injector` that used injectable components defined in configuration JSON file to manage components. The JSON file have a DB connection components to be implemented.
+An `Injector` that used manage components defined in configuration JSON file to manage components.
 
 ## Questions
 1. What is the advantage of having initialization in configuration file?
