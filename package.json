@@ -6,6 +6,12 @@
   "scripts": {
     "test": "mocha || true"
   },
+  "dependencies":{
+    "express": "*",
+    "body-parser": "*",
+    "ajv":"*",
+    "memstore":"*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tiaradwiputri/tiarakataai.git"
@@ -18,6 +24,7 @@
   "homepage": "https://github.com/tiaradwiputri/tiarakataai#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "supertest": "*"
   }
 }
