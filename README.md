@@ -2,7 +2,7 @@
 
 This is a take home assignment to create a warehousing system that enables one service to handle all data management. The system will be developed in iterations. Each branch represent an iteration with third iteration as master branch.
 
-To start the application please use command `node index.js` or `nodemon`. To start test please use command `npm run test`.
+To start the application please use command `node index.js` or `nodemon`. To start test please use command `npm run test`, please make sure the server is running before execute the test.
 
 # First iteration
 CRUD operations for conversation log and user profile. The data shall be stored in memory using Memstore module.
@@ -27,7 +27,7 @@ DELETE /converations/{id}
 2. What dessign patterns is used on the first iteration?
 
 # Second iteration
-An `Injector` that used manage components defined in configuration JSON file to manage components.
+An `Injector` acted as container to manage components defined in configuration JSON file to manage components.
 
 ## Questions
 1. What is the advantage of having initialization in configuration file?
@@ -36,7 +36,7 @@ An `Injector` that used manage components defined in configuration JSON file to 
 4. What steps should be done to have a definable environment variable in configuration file?
 
 # Third iteration
-A generic repository to handle all kind data repository definable in configuration JSON file.
+A generic repository to handle generic data repository with schema definable in the configuration file.
 
 ## Questions
 1. What is the benefit of the changes?
